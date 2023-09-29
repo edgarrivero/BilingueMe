@@ -1,43 +1,88 @@
-// import { StatusBar } from 'expo-status-bar';
-// import { StyleSheet, Text, View } from 'react-native';
-
-// export default function App() {
-//   return (
-//     <View style={styles.container}>
-//       <Text>Open up App.js to start working on your app Edgar!</Text>
-//       <StatusBar style="auto" />
-//     </View>
-//   );
-// }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
-
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomeScreen from './Components/HomeScreen';
-import ProfileScreen from './Components/ProfileScreen';
-import SettingsScreen from './Components/SettingsScreen';
+import { StyleSheet, View, Text, Pressable } from 'react-native';
+import Animated, {
+  useSharedValue,
+  useAnimatedStyle,
+  withTiming,
+} from 'react-native-reanimated';
 
-const Tab = createBottomTabNavigator();
+import Carousel from './src/Components/carousel';
 
-function App() {
+const TAB_WIDTH = 150;
+const TABS = ['Home', 'Search', 'Profile'];
+
+export default function App() {
+  const offset = useSharedValue(-TAB_WIDTH);
+
+  const animatedStyles = useAnimatedStyle(() => ({
+    transform: [{ translateX: offset.value }],
+  }));
+
+  const handlePress = (tab) => {
+    const newOffset = (() => {
+      switch (tab) {
+        case 'Home':
+          return -TAB_WIDTH;
+        case 'Search':
+          return 0;
+        case 'Profile':
+          return TAB_WIDTH;
+        default:
+          return -TAB_WIDTH;
+      }
+    })();
+
+    offset.value = withTiming(newOffset);
+  };
+
   return (
-    <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="Inicio" component={HomeScreen} />
-        <Tab.Screen name="Perfil" component={ProfileScreen} />
-        <Tab.Screen name="Configuración" component={SettingsScreen} />
-      </Tab.Navigator>
-    </NavigationContainer>
+    <View style={styles.container}>
+      <View style={styles.tabs}>
+        {TABS.map((tab, i) => (
+          <Pressable
+            key={tab}
+            style={
+              i !== TABS.length - 1 ? [styles.tab, styles.divider] : styles.tab
+            }
+            onPress={() => handlePress(tab)}>
+            <Text style={styles.tabLabel}>{tab}</Text>
+          </Pressable>
+        ))}
+      </View>
+      <Animated.View style={[styles.animatedBorder, animatedStyles]} />
+      <Carousel></Carousel>
+    </View>
   );
 }
 
-export default App;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '100%',
+  },
+  tabs: {
+    flexDirection: 'row',
+  },
+  tab: {
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    width: TAB_WIDTH,
+  },
+  tabLabel: {
+    fontSize: 20,
+    textAlign: 'center',
+    fontWeight: 'bold',
+  },
+  divider: {
+    borderRightWidth: 1,
+    borderRightColor: '#ddd',
+  },
+  animatedBorder: {
+    height: 8,
+    width: 64,
+    backgroundColor: 'tomato',
+    borderRadius: 20,
+  },
+});
