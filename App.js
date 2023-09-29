@@ -1,56 +1,41 @@
 import React from 'react';
-import { StyleSheet, View, Text, Pressable } from 'react-native';
+import { StyleSheet, View, ImageBackground  } from 'react-native';
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
   withTiming,
+  withRepeat,
+  FadeIn,
+  FadeInDown,
+  FadeOutDown,
+  FadeOut
 } from 'react-native-reanimated';
 
-import Carousel from './src/Components/carousel';
-
-const TAB_WIDTH = 150;
-const TABS = ['Home', 'Search', 'Profile'];
-
 export default function App() {
-  const offset = useSharedValue(-TAB_WIDTH);
+  const offset = useSharedValue(50);
 
   const animatedStyles = useAnimatedStyle(() => ({
-    transform: [{ translateX: offset.value }],
+    transform: [
+      { scale: offset.value }
+    ],
   }));
 
-  const handlePress = (tab) => {
-    const newOffset = (() => {
-      switch (tab) {
-        case 'Home':
-          return -TAB_WIDTH;
-        case 'Search':
-          return 0;
-        case 'Profile':
-          return TAB_WIDTH;
-        default:
-          return -TAB_WIDTH;
-      }
-    })();
-
-    offset.value = withTiming(newOffset);
-  };
+  React.useEffect(() => {
+    offset.value = withRepeat(
+      // highlight-next-line
+      withTiming(-offset.value, { 
+        duration: 3000,
+        repeat: false, 
+      })
+    );
+  }, []);
 
   return (
     <View style={styles.container}>
-      <View style={styles.tabs}>
-        {TABS.map((tab, i) => (
-          <Pressable
-            key={tab}
-            style={
-              i !== TABS.length - 1 ? [styles.tab, styles.divider] : styles.tab
-            }
-            onPress={() => handlePress(tab)}>
-            <Text style={styles.tabLabel}>{tab}</Text>
-          </Pressable>
-        ))}
-      </View>
-      <Animated.View style={[styles.animatedBorder, animatedStyles]} />
-      <Carousel></Carousel>
+      <ImageBackground  source={require('./assets/background.jpg')} style={[styles.container]}>
+        <Animated.Image entering={FadeIn.duration(3000)} source={require('./assets/logo.png')} style={[styles.logo]} />
+        <Animated.Image entering={FadeInDown.duration(4000)} source={require('./assets/astronauta.png')} style={[styles.astronauta]} />
+      </ImageBackground>
     </View>
   );
 }
@@ -61,28 +46,80 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     height: '100%',
+    width: '100%'
   },
-  tabs: {
-    flexDirection: 'row',
-  },
-  tab: {
-    paddingHorizontal: 20,
-    paddingVertical: 10,
-    width: TAB_WIDTH,
-  },
-  tabLabel: {
-    fontSize: 20,
-    textAlign: 'center',
-    fontWeight: 'bold',
-  },
-  divider: {
-    borderRightWidth: 1,
-    borderRightColor: '#ddd',
-  },
-  animatedBorder: {
-    height: 8,
-    width: 64,
-    backgroundColor: 'tomato',
+  box: {
+    height: 50,
+    width: 50,
+    backgroundColor: '#b58df1',
     borderRadius: 20,
   },
+  logo: {
+     maxWidth: 300,
+     resizeMode: 'contain', // Esto asegura que la imagen se ajuste sin recortar
+   },
+   astronauta: {
+    maxWidth: 300,
+    resizeMode: 'contain', // Esto asegura que la imagen se ajuste sin recortar
+  },
 });
+
+
+
+// import React from 'react';
+// import { Button, StyleSheet, View } from 'react-native';
+// import Animated, { useSharedValue, withSpring } from 'react-native-reanimated';
+
+
+// export default function App() {
+//   const width = useSharedValue(50);
+
+//   const handlePress = () => {
+//     width.value = withSpring(width.value + 150);
+//   };
+
+//   React.useEffect(() => {
+//     // highlight-next-line
+//     handlePress();
+//   }, []);
+
+//   return (
+//     <View style={styles.container}>
+//       <Animated.Image source={require('./assets/background.jpg')} style={{ ...styles.backgroundApp }} />
+//       <View style={styles.containLogo}>
+//         <Animated.Image source={require('./assets/logo.png')} style={{ ...styles.logo, width }} />
+//       </View>
+      
+//     </View>
+//   );
+// }
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     alignItems: 'center',
+//   },
+//   box: {
+//     height: 100,
+//     backgroundColor: '#b58df1',
+//     borderRadius: 20,
+//     marginVertical: 64,
+//     maxWidth: '100%'
+//   },
+//   backgroundApp: {
+//     height: '100%',
+//     width: '100%'
+//   },
+//   logo: {
+//     position: 'absolute',
+//     top: 20,
+//     left: 20,
+//     width: 100,
+//     height: 200,
+//     zIndex: 999, 
+//   },
+//   containLogo: {
+//     height: '100%',
+//     width: '100%'
+//   }
+// });
