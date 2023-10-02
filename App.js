@@ -1,5 +1,5 @@
-import React from 'react';
-import { StyleSheet, View, ImageBackground, TouchableOpacity, Text  } from 'react-native';
+import React, { useRef, useEffect } from 'react';
+import { StyleSheet, View, ImageBackground, TouchableOpacity, Text,  handleButtonPress,Button, navigation  } from 'react-native';
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
@@ -14,12 +14,18 @@ import Animated, {
   withTiming,
   withSequence,
 } from 'react-native-reanimated';
+import { useNavigation } from '@react-navigation/native';
+import LottieView from 'lottie-react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const ANGLE = 10;
 const TIME = 100;
 const EASING = Easing.elastic(1.5);
 
-export default function App() {
+
+
+export default function App({ navigation }) {
   const rotation = useSharedValue(0);
 
   const animatedStyle = useAnimatedStyle(() => ({
@@ -48,21 +54,41 @@ export default function App() {
     // Esta función se ejecutará cuando se presione el botón
     console.log('Botón presionado');
   };
+  const animation = useRef(null);
+  useEffect(() => {
+    // You can control the ref programmatically, rather than using autoPlay
+    // animation.current?.play();
+  }, []);
 
   return (
     <View style={styles.container}>
       <ImageBackground  source={require('./assets/background.jpg')} style={[styles.container]}>
         <Animated.Image entering={BounceIn.duration(1000)} source={require('./assets/logo.png')} style={[styles.logo]} />
         <Animated.Image entering={FadeIn.duration(2000)} source={require('./assets/planetas.png')} style={[styles.planetas]} />
-        <Animated.Image entering={BounceIn.duration(3000)} source={require('./assets/astronauta.png')} style={[styles.astronauta]} />
+        {/* <Animated.Image entering={BounceIn.duration(3000)} source={require('./assets/astronauta.png')} style={[styles.astronauta]} />  */}
+        <View style={styles.astronauta}>
+      <LottieView
+        autoPlay
+        ref={animation}
+        style={{
+          width: 500,
+          height: 500,
+        }}
+        // Find more Lottie files at https://lottiefiles.com/featured
+        source={require('./assets/animation_astronauta.json')}
+      />
+      
+    </View>
         <Animated.View entering={FadeIn.duration(2000)} style={styles.containerBtn}>
           <TouchableOpacity onPress={handleButtonPress} style={styles.button}>
             <Text style={styles.buttonText}>Iniciar</Text>
           </TouchableOpacity>
         </Animated.View>
         
-      </ImageBackground>
-    </View>
+        </ImageBackground>
+      </View>
+
+    
   );
 }
 
@@ -90,9 +116,10 @@ const styles = StyleSheet.create({
   },
    astronauta: {
     position: 'absolute',
-    top: 210,
+    top: 150,
+    left: -50,
     zIndex: 10,
-    maxWidth: 280,
+    maxWidth: 350,
     resizeMode: 'contain', // Esto asegura que la imagen se ajuste sin recortar
     marginBottom: 200
   },
