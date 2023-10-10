@@ -19,6 +19,8 @@ import LottieView from 'lottie-react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+import Planets from './src/Components/planets';
+
 const ANGLE = 10;
 const TIME = 100;
 const EASING = Easing.elastic(1.5);
@@ -32,6 +34,7 @@ function HomeScreen({ navigation }) {
     // animation.current?.play();
   }, []);
 
+  
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <View style={styles.container}>
@@ -57,7 +60,7 @@ function HomeScreen({ navigation }) {
             <Text style={styles.buttonText}>Iniciar</Text>
           </TouchableOpacity>
         </Animated.View>
-        
+
       </ImageBackground>
       </View>
     </View>
@@ -69,7 +72,8 @@ function DetailsScreen({ navigation }) {
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <View style={styles.container}>
       <ImageBackground  source={require('./assets/background.jpg')} style={[styles.container]}>
-        <Animated.Image entering={FadeIn.duration(2000)} source={require('./assets/planetas.png')} style={[styles.planetas]} />
+
+        <Planets></Planets>
         <Animated.View entering={FadeIn.duration(2000)} style={styles.containerBtn}>
           <TouchableOpacity onPress={() => navigation.navigate('Home')} style={styles.button}>
             <Text style={styles.buttonText}>Iniciar</Text>
@@ -134,6 +138,7 @@ export default function App({ navigation }) {
         />
       </Stack.Navigator>
     </NavigationContainer>
+    
   );
 }
 

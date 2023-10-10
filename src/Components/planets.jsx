@@ -1,0 +1,58 @@
+import React, { useEffect, useState } from 'react';
+import { View, Text,Image,StyleSheet, FlatList, Dimensions  } from 'react-native'; // Asegúrate de importar las dependencias necesarias.
+import planetas from '../../assets/data/planetas';
+import Animated from 'react-native-reanimated';
+
+const PlanetList = () => {
+
+  return (
+    <View>
+      <Text>Planetas</Text>
+      <FlatList
+      data={planetas}
+      style={styles.container}
+      renderItem={({ item: planeta }) => (
+        <View style={[styles.planetaContainer, { alignItems: planeta.alignItems, justifyContent: planeta.justifyContent }]}>
+          <Image
+            source={{ uri: planeta.imagen }}
+            style={[styles.planetaImagen, { width: planeta.with }]}
+            accessibilityLabel={planeta.nombre}
+          />
+          <Text style={styles.text}>{planeta.nombre}</Text>
+        </View>
+      )}
+      keyExtractor={(item, index) => index.toString()}
+    />
+      
+    </View>
+  );
+};
+
+export default PlanetList;
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  planetaContainer: {
+    width: Dimensions.get('window').width - 20,
+    padding: 10,
+  },
+  planetaImagen: {
+    resizeMode: 'contain',
+    width: 100,
+    height: 100,
+    
+  },
+  text: {
+    // Estilos de texto
+    color: 'white'
+  },
+})
+
+
+
+
+
+
