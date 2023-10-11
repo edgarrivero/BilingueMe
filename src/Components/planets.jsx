@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text,Image,StyleSheet, FlatList, Dimensions  } from 'react-native'; // Asegúrate de importar las dependencias necesarias.
+import { View, Text,Image,StyleSheet, FlatList, Dimensions, TouchableOpacity  } from 'react-native'; // Asegúrate de importar las dependencias necesarias.
 import planetas from '../../assets/data/planetas';
 import Animated from 'react-native-reanimated';
+import { useNavigation } from '@react-navigation/native';
 
 const PlanetList = () => {
+
+  const navigation = useNavigation();
 
   return (
     <View>
@@ -12,14 +15,17 @@ const PlanetList = () => {
       data={planetas}
       style={styles.container}
       renderItem={({ item: planeta }) => (
-        <View style={[styles.planetaContainer, { alignItems: planeta.alignItems, justifyContent: planeta.justifyContent, height: planeta.height }]}>
-          <Image
-            source={{ uri: planeta.imagen }}
-            style={[styles.planetaImagen, { width: planeta.with }]}
-            accessibilityLabel={planeta.nombre}
-          />
-          <Text style={styles.text}>{planeta.nombre}</Text>
-        </View>
+        <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+          <View style={[styles.planetaContainer, { alignItems: planeta.alignItems, justifyContent: planeta.justifyContent, height: planeta.height }]}>
+            <Image
+              source={{ uri: planeta.imagen }}
+              style={[styles.planetaImagen, { width: planeta.with }]}
+              accessibilityLabel={planeta.nombre}
+            />
+            <Text style={styles.text}>{planeta.nombre}</Text>
+          </View>      
+        </TouchableOpacity>
+        
       )}
       keyExtractor={(item, index) => index.toString()}
     />
