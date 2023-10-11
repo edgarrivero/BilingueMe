@@ -1,76 +1,65 @@
 export default [
   {
     nombre: "Mercury",
-    imagen: "https://uc32b52e0b966beb401e38dc6fcb.previews.dropboxusercontent.com/p/thumb/ACAogbjJsY8-WmCOv96MSjhVtmaxPv2D5RRwujg4BoWPCZ1I2BdeBHG7Rims_KsshO1dJMde-4AWHHOjCWKcWRkHaxzq9XuS23ROAZBn8EtpoWWfWdaR2lvlfr8KBTPNKAhqoKG3TjESjyuCD8Vhj-44R5jsbW4GD4bOCnjq1C0T-drh6YaAzAVDMwgn9cFvUfYOOmKUJOhzEfZq9kfAj0zRsSeMl-BN0Oyvq0Z83lRsjmk6vSm0wkabdqoVdGBLweuaTzKoj4ocCT3AU0ZiiO_z-us8jOZSDn5JAFFIsVaIjJmMhceu14e-8rLrQ1_Z2F8Td5uGILw6IVWRHqZLPit06RSf_zwZdsMY91fB7ttwiPX7hBul4ydG4bNpCtPX8OU/p.png",
+    imagen: "https://lh3.googleusercontent.com/pw/ADCreHdJYN9L4k4nkvmI81POGJsMbPBqgkPHxRoNhgZoBP0uHrHKmD606zAy-_Y3AufdMVAJzLz8TScSnzZ0h82QlbrY_NVU24SlpWEG0LJIf6-46EGgURUzmb7lQLxEILvDf0fbqTCnnppUUO-26OMpSrYiXD3zkRj_5G4T2j3gAWmDRRvaVtP9MFgVQuQdm0mPgpVrbzMZq8k-nZUJ8_aweTgEZe3O2x1zvnqghfW4t5pWte2MUPmSjfUhwV6Q14YIsf9Q_Tr6Bl3LuU2-dp24fKM6PQYky90siT8dTaM73lMjveGYbvkYJV7cA65TqfuzJ4NVD3JZG6_Ynegx1THrnprKxqRK7FpC29adE4K2YJlVTiRaqtlLSGIJieDZGpoAxGWymby4Js4_uwErDJ9ThREB8oQkCydram431gIM5f9Z4ebqxCUv0gr3bPwHPdcDjH9n-BszZBK8RsIh4xUmy2IvR3glX4rdVysjxHoc6N34zMMy3egtckbjHrA-QLXpqtK8Wmsb2U-3TaIoOA93yC1oYh7KRL5_6tEDbg07WEY2dAZ9ylxsX2kfztkdrk41CTNiyx-BMpY33CDv9KnUagHdkduxUZ5KbVVr2dxux5w1_r14798vs-4-6Ag3ZJrM3VvOSfE8EwUmSiRcD9c6nhvJqeSe1zZDuWupEmPpjWeTkCbvcJEANLzMikbUpx2F90iq-icU1JDgqPsGQqdgKNmOLKMwVP092cVNb8wqzEkI1BH_5M0Gq31i82C9HbWOaAYvmtKUl9LrJoIK-GAqMcAgffYwxjh2gMJKEn3VmjHD_jiLANuLgHpcxIL4ppqnwqWQWLzUMdvQWMxhwGoqUKjngLOCHojS8deUyB7x8NrtYuNvfmgENtvXdjfJFzV0poun3QqP7Lw4WhBVusKsYwar4xTAqY9_KW9K93ShhVD8t3z_fdR0jn131TD7eZgNTTLWqqZUreVttmQnpPF93uWIY3Gc37W8LAjXJ5kHSXeI6clwGymB-cRAZbaAajW2dEDAxGnR3fnJ3BcP5G7AoFjnZG8Icfx7oR0ek4QLh4efnHomaLbrsZa-bBkUvCENuJ13Uksd1CAuiqASe2roRlsIYyK0gkRdFSTlWamN0vtPNfriRZteRyyMB46mGLpxBMtctHxW5vzqU2GO=w328-h234-s-no?authuser=0",
     nivel: "Beginner",
     descripcion: "Mercury is the closest planet to the Sun.",
     alignItems: 'flex-start', // Alineación horizontal
     justifyContent: 'flex-start', // Alineación vertical
-    with: 80
+    with: 150,
+    height: 100
   },
   {
     nombre: "Venus",
-    imagen: "https://uc63c0bdf97bf47b1a6ff9f8fb77.previews.dropboxusercontent.com/p/thumb/ACARu9h5nukuuALoeL8mSA38nmz5wM-8tClOw99VLxmoil-vfTyR0m3PLVJNWXG7dfdGStO5nn1o6n8uR3ST56kCsmafJS-1ZIC49fuSMrGNnROVo22SXXistky9esFDwTuEibcZP77YzXhEJt8wZCr6LhmzDhRDncH3AHoj1C9vKajP_89zGm8bCW7CzX2re86E_pmDfm_JniWkWa8g-Zr3n5sQ5lHHfpghFsSP7SBY1vgKWio11n6faYKnL0JGiATzrspyAGfeAbF5_FwyVRHLt7tJ2ETK-R0cgLB7VCzKGpyHmq38YzH12Zv07xGfRRrFJwp3nKYF7UmgbOQ73L3sTDwNgWgRUjYPTiBUpw6TTNziaDhhtpdUCHdBM5x52XY/p.png",
+    imagen: "https://lh3.googleusercontent.com/pw/ADCreHfrIFvFP6yYpcEpsuHzAqhKFo0XIgJac2EUoE4ZGJUSN6CWF6AkTg11uWght-LvJFohnbPGyMtnunfqhf6crZVVm8fIS1JFNk1F_jxdrGIEdk-3pLOjj24RVvtafHKQ2ldNsmUTWB5FicniUWzbZ9g_vmRxioO4a_H0-YtKZSb5vjlTzxyH7AbLxSIhfahnxmvQjbQLR1qDaxRn6wJ6oSlq8BQynKNM5D6OdPHKrFAlhclKUjx6DoI9m0K86vsUbDhclpzsI5W0c59nRCoVOqVT1tqod5nvgGhIb4oRYNmyrqvyeW6xFeBA9dWU7YLEqzpbFp4CCXgsjDe-XkAfKQG8RxykJvCJuMGAWycUsbYxqvQI6qkO3BxUSvr-nK_e7KAbiM0DHmMsZBxfWAzl28EQYbbwnPmGRH596zmCFcH0TcmNiKjZk8Ks1RyL4r_lTuH-T81oimiBH4r2PdNpcAQlWWExJI5W2QUfGNk7jhT_ekbsMXXj96rk3o_c18HXdA9b1eRgq9eF99NlFOG41t4mmcCnzhkhGGeGrJkwWyvyQ0FFhKGfzDG88R7vd3wTxTr-83gJD1MMkb2jCh3rroa0mtYQcRmdHH3i1P25WdhUikgrGNgsgmeXsQ4j6bcY2F5_vnwlwA7bYoSC6j1ttdIPSL5vf8sKJVTm68QGa4cdkymJmGAUhnCDY_mtrwfBjWoOoUhYenS0xU-3T3FMwJBl8rqkt4mDwvykIQ9XgxD2CWj0lARc0__8UlvM9QkTEPjWGcassjAy530XHL2iQykCOgKfBsSSv8uBgl_0rBauvfpTaEGkpA0qVRzP04Mw-2ET-_92q7wMJ7GAdXxz4SLpPpBVdlNrqh7Cqe5A9Okcid-l-iG9TmKe3CxnS6jK67pb3lKW98inF8COPPL7V4MoWmmywxmk9fdfWawH6l5hQXgJrhUCGk9xmE-x4wgvPtix01JXXw_8jEl3csji6Oq8xlbJGXxswcTQOt9bzLDOIGganUDSBfa7jUNcB941ylk8kESccjAsf__0m1Sf1IMLLLX6m36_DKeJmHy8F4t-fNI44yx_l-qEFQ7BhsMwjvht27f_KuECCZuyHSQOKNrmGjHRXIaTOvE9oTYpczwzJ8YqHphSbdfEn0J-HBEIXi0HDJzN2-nCFQ-I=w98-h98-s-no?authuser=0",
     nivel: "Beginner",
     descripcion: "Venus is known for its thick atmosphere.",
     alignItems: 'flex-end',
-    justifyContent: 'center',
-    with: 180
+    justifyContent: 'flex-start',
+    with: 70,
+    height: 70
   },
   {
     nombre: "Earth",
-    imagen: "https://uc32b52e0b966beb401e38dc6fcb.previews.dropboxusercontent.com/p/thumb/ACAogbjJsY8-WmCOv96MSjhVtmaxPv2D5RRwujg4BoWPCZ1I2BdeBHG7Rims_KsshO1dJMde-4AWHHOjCWKcWRkHaxzq9XuS23ROAZBn8EtpoWWfWdaR2lvlfr8KBTPNKAhqoKG3TjESjyuCD8Vhj-44R5jsbW4GD4bOCnjq1C0T-drh6YaAzAVDMwgn9cFvUfYOOmKUJOhzEfZq9kfAj0zRsSeMl-BN0Oyvq0Z83lRsjmk6vSm0wkabdqoVdGBLweuaTzKoj4ocCT3AU0ZiiO_z-us8jOZSDn5JAFFIsVaIjJmMhceu14e-8rLrQ1_Z2F8Td5uGILw6IVWRHqZLPit06RSf_zwZdsMY91fB7ttwiPX7hBul4ydG4bNpCtPX8OU/p.png",
+    imagen: "https://lh3.googleusercontent.com/pw/ADCreHenFi_Siip6PM4n2siXg0nEIwaFmgAZPP1X_pI78kxH5XDcBg8S1PKX4GqV3ZxLMihNPr4AAdZywk1-YYJ_gT447GtxAfEOV3wqUjGhneUUgTeIbGPW5zUm63-J1FGIWt-IEIm9N8U56Wh-l6bc8ysATru7e1gcXNqaa0Wz2JbYG3bfCIuQcg1BvgndVyUxbW_vMV_1U7Z7aSiyzK9WTpQFcI0529MXx00BYb51jTIDzAw1jhUk9iTEyTWt_k-jJUiEokPcypLOU3yEQGUcJPCZ5Q1pU0RIbOP6abZy1-oo9MDalTNHF8Iztl1K2wFizoV-kXIgwOVhGsusItlUeEaFZALzxGLMfiMJS7Cob6bOQl0LRT6GsMNdObhXlYnCwofLw_pokpbEgSdCaJA8kDYYkMB5Fh0thAAxo8mdFTmuIPboDzNzk1-BwuELGu8KMxVRY43xsymK56bJFhBKUsSo7Yj9DCVezS3suumRfRHbzW5RAhwdngTfVXClJCfKTNzXZq7lRwp37jz4LTD2WOA4MkyxV61_FUikYuPbzzg76KdojBgz4afD_QJtWXisrNJO-ORRWrU9ryS-56cDC7LePtgXwb8Jm3H8XejSeYK6ETHjLePuwx9szazVWQ7n7zZeVzi8cW4TaP32V56STUi31YSaA07ThzWXrCYB1vDmk5tLmMQu5jELPAJDGYJ3D4LGB2yDtQJtYmWL7SFf5qJxcFApJ_d_Ijeu9dmUuBXNfuBSJL2sSE3pFNT5yNXesBtgxW1tVUXG9vourJdJs08WouSg4Q8XPmMoyOn5QxSZ9Np2f15qgiw0_GR0yqLVPygduwtsX30ph3Q9oTFQTfvGUU75uOku699b4lcMIDCGj8BABG4DDYfFahIEM4WEnymZNydPV0y08Qt6bk1iyqM7gCQTYz2RBTxDS6DaS-KQnPo6pELyOrkxN3cSI7uXmYHPAG8WGhlq2_nxPa8GcyM0wan1jIHrrOR4Of_ecp99yd4oZT-LMxF_7nPAZZFDk_XucRC4bC19BYT9edZ-1xPaaar2Ow8yL-X6gvrybAZKOAbty7jVV72ktllQVJaqCoqIo1P2LRGdE4NrWogy2xLCAYXdPRVWSpsWxxGxePkxfjbbhEbz5bELc9VpwwjrGMWLLS-XLe2kYKrJ=w380-h380-s-no?authuser=0",
     nivel: "Beginner",
     descripcion: "Earth is the third planet from the Sun and the only one known to support life.",
     alignItems: 'flex-start',
-    justifyContent: 'flex-end',
-    with: 110
+    justifyContent: 'center',
+    with: 50,
+    height: 80
   },
   {
     nombre: "Mars",
-    imagen: "https://previews.dropbox.com/p/thumb/ACDpnwK7kJ2k3lS9sxt8nP8SyB0LqRo_dQvm0ijgkCuvlmeHy2zDDHF8BrcWVXR6L2PX_Lyd9xUGd4_YmcPdM0uQZBb9RyvFrPixfNd81rq_RzcS7C3FZCAenBaTY2srtXszlUYs-3AJejbvm8KRVR9saE-xTO2OprWDj9zpPf3hlO_9-59rP8_cdg4FCcb58N8FUXDJ37AEf1BM93ssd-LtSx7SzHXId1eE3Z3JMZMB6dL6u3wIL7oweYcb5opxI7ct9UMCbb7wmwIeTZLL3eHW9pHIkMfjfhoaT48NJeKPfRQ9wpu6yNNQYQ6acUSbZmVuZmMlvUyzvmD4AmBcX1gz/p.png",
+    imagen: "https://lh3.googleusercontent.com/pw/ADCreHe4r2rAMYJG6PMP-3IXQ1fg-DQmzhq6CGAi1za7OlQ5iFLkfJKM3pTtil_qNFgetKIBpvc7z9efN_OktH54FPtyaJLJSe3upEYWGwjxutv4Ppf9NvgQPN3zjwvAuVgcD-gcpMHugXflCNxd29to9lyo0Vss0Ni7aXmRU8rZBJ7gb5aSUU_DagqeUyyXxkMl8Z6mJal31htry0ev5uktGcuPSbzFCf_t7zQuJd6dmIKU5S6ZbsPw8_V8U1A7THEUBbAwyNULvC8jzVCv2wMXNvuLRqjElMigNqBvVqISeyAnXQ72yACDEyfNAEye-WOajGrKAM8ssEETcOC-9i22tOasZv13oAZ1S9WG2ISNoNCPhEWKsjdYaLHfJORa4t0unYusUAFbfg5VypRZInJMneEFDCIonNwmjJIZGbX1ef6TqphlmO6XnARB2Sgqcs9HFu5V91Fy3S65pJYmuTxbSJkQX26PSrxMju_eVxQY27n1ELdiCpquAwhA7yowagsG0QBxtJgqoQXkgR6WOfWGT8fjbcSwQlg1bLCwu8yV5RB3ftCfFtE7Ej4LR-ySSaTmiV4zEbQYzmyPDCptnVtzdDl22f8qCiuzx2ENKz9k9BQkAGZ7dPOwXCk-wP93tX5eMfCPS4Q1dvBV3vxgelwRuLpKvnNOUdz4LFu9AawyAbuav6N3YjBtVZBuwBlsMfsIHsBQjUeXCVBINYDYfrtHPxr9qTryWdWgr56Xjc6jF_ugSh5qZT3w21UF9pUIPDg3ltc6MwDFjgXUxVnWP4LO0RLxKzBaMmOYbs2yK6adD-OIDZOHYz_LUpaFzaQz8u9gOAwxyHTi7Lk4fXWHx3UMcFWQGbTAcYVZmsksz9UZZRa1dibnZViS-WJiASAT-X_gyF1joU-tKgt5hymgDU6Q2H6ag3Dov4oag9LbMFI7_5x5XOHwH9PjpB8zIkBM_-in6i7llheYNChFy7EwYcUMnXJXL40eOYL6RW9cGS3lbOeUBQACEZl6r4-t-nKW0UVDqcaJ_jhdaRXYY_7XyqDHgXnU0-MoUVzLccGFHJr0s7LHAB9-yoKwaX6mNBzyvFGWavph2QLlViZSzOYwTe6SQKES7MfKpS1I5-EIn_v8Z9qypQhroRVdbY2fqtXDEq4rDAa9bJmUc8ozr-SX=w399-h399-s-no?authuser=0",
     nivel: "Intermediate",
     descripcion: "Mars is often called the Red Planet.",
     alignItems: 'flex-end',
     justifyContent: 'center',
-    with: 150
+    with: 150,
+    height: 150
   },
   {
     nombre: "Mercury",
-    imagen: "https://uc63c0bdf97bf47b1a6ff9f8fb77.previews.dropboxusercontent.com/p/thumb/ACARu9h5nukuuALoeL8mSA38nmz5wM-8tClOw99VLxmoil-vfTyR0m3PLVJNWXG7dfdGStO5nn1o6n8uR3ST56kCsmafJS-1ZIC49fuSMrGNnROVo22SXXistky9esFDwTuEibcZP77YzXhEJt8wZCr6LhmzDhRDncH3AHoj1C9vKajP_89zGm8bCW7CzX2re86E_pmDfm_JniWkWa8g-Zr3n5sQ5lHHfpghFsSP7SBY1vgKWio11n6faYKnL0JGiATzrspyAGfeAbF5_FwyVRHLt7tJ2ETK-R0cgLB7VCzKGpyHmq38YzH12Zv07xGfRRrFJwp3nKYF7UmgbOQ73L3sTDwNgWgRUjYPTiBUpw6TTNziaDhhtpdUCHdBM5x52XY/p.png",
+    imagen: "https://lh3.googleusercontent.com/pw/ADCreHfY2L_Yiie5dimnnxN-_FinKOZTKreRik1V_cEY2v42KiIq01tQNnVFn0yNgTuMvfTNYsxkr7rMNqnCwfclAMn-0f1lQmq0ArBlujoLHFCSGAUI_zuSGHBZz6bq0DL1xRBy7nEIPPS_VmOgtixAgiowUxgTLEycc1mVo6eFLX1rGtVgEUqpkMDGV5uHFXs1kBhLzoiS2QogmTYOaYfJGLqFYvVQCgLNC10SgcyKWcZn615crqfPfRWzFG58I-I7Vf3xizTVqXSjKDPqm29U7lVe4Hbkrq3fyCv8DXm6Z-QYctrkUMJDw6sMO4iB41JYiRDbDE0o-JGmgwxLqEAaCFlhqTsm1pymRZ9KLa7wuwLp3ex0zkVMoyGBpm-pBbRVI3m-9fs2hNpJfbvpTFsVOuE2eCROZsJrdjw-oK0X2d2tV3nTSs4No698a6ctxaHKsn79drdcnR_x3d41jhYVFBnWfajQ2ismNn9GHU9BaO_Gmv3tbjDcjNy1gCeSm8s8wIdUcRpKebztVOw-5r8u9fs8oYkIJycX4sb9M-UxcbpUjojkeK3eTcT0R_jn8blC2NbyyioqsnmOy4fMnEj_vnLCJEm4G9h30KmoNp2SAlYz3oQOZpB76RHCVHb-B8WNNJOA4XBqg0IsmmNNWMcvFlan8W5_4lczicdqIuWDfCppR23ks2bTD2qsAiySQsT79CJFHxDuF6mvo-E42TPNeaTEiVPwrZEuKewuOSERKSHBBbatNwlCkEDiPdIxFmONOrr-fUlOGp7jzTeLMM34CV76grgwb956XZiXUMRzne3Wh6aYqPK8CumaMGNIINrtWvBNqoN8kubbHzSBpjTiNgF9i9FJ3b0A3q6ooUFg5HJAkwC9MHoMeBJDX6SEDKtnsWtnb43ss8An-ln7Oajj64cGzqY4Wkp8sP4pBVWjttJ9bph_yAzrBuDQoD3NSPhHAIFtZ2YkxvvP9wn0TdVFTv-Y5pWmfZqynDi6CAOrLCvxl6z9Ug36me0vJDX6HwLm1KNyAO-G2XbwwhvJWT2gqQ_fCgWF4x48wkksMx6Db1EXPzCRO_Njk0gngATiDqQf-MAzKh8XghPLQwppzFqe0jr5murJ_LHuTJEfg0-4en61Kjntd0Y3COR1Mx7ql3LXD5RtS0rLPWf8OcEb=w337-h195-s-no?authuser=0",
     nivel: "Beginner",
     descripcion: "Mercury is the closest planet to the Sun.",
     alignItems: 'flex-start', // Alineación horizontal
     justifyContent: 'flex-start', // Alineación vertical
-    with: 80
+    with: 80,
+    height: 100
   },
   {
     nombre: "Venus",
-    imagen: "https://previews.dropbox.com/p/thumb/ACDpnwK7kJ2k3lS9sxt8nP8SyB0LqRo_dQvm0ijgkCuvlmeHy2zDDHF8BrcWVXR6L2PX_Lyd9xUGd4_YmcPdM0uQZBb9RyvFrPixfNd81rq_RzcS7C3FZCAenBaTY2srtXszlUYs-3AJejbvm8KRVR9saE-xTO2OprWDj9zpPf3hlO_9-59rP8_cdg4FCcb58N8FUXDJ37AEf1BM93ssd-LtSx7SzHXId1eE3Z3JMZMB6dL6u3wIL7oweYcb5opxI7ct9UMCbb7wmwIeTZLL3eHW9pHIkMfjfhoaT48NJeKPfRQ9wpu6yNNQYQ6acUSbZmVuZmMlvUyzvmD4AmBcX1gz/p.png",
+    imagen: "https://lh3.googleusercontent.com/pw/ADCreHfa4ZOEp3J8UbupnES0YImCMbOUtweKgBcpvxMAYCmJ9x2XvlBCTRxQLhWgR0oZFvPMI0IEwuPZiMAki_5aG3Lm4OacvZaf2Z5gUAczDxIw00YIaC96UgtIvZAwA4qPDVUUAYss-bGU8Z4oPrxbwEZceDCUhBX0bngjP0H4pRNM9uKENiTKTnJL45YNpXfQPD2xBueF_t0DHRBB9KoKK3kbxCSoxU6US_MyZvbSTw7v2FMVOyY6YEEEvBY0Rtpl0Ge_erpDx2zA2DFnm0KteDWpgfJha1EXzU1Wbm6XLry2OE1t2UQqG4uvXoKC9OQi0UEo-7KGB8IXA6a43jp847rhQd3kOAhm7_q3_YqH7mK7304FjdwseCwkMRdFQBEOg94_AvC5dv00W5_y1WVnZsqN4tH_Zdw8uFOJ1YnCP-dUB6o9LPUMa5BOgFXzPJn75whuOaV3wE8jiHN7vIDcvYR_jOAQ18imiaohEwNS_7mtfivzWEpMHB2LCnRF4Ly24vQoLhRdHFcauazNf2qu2uwV3DgFkAZpn8Lq6Y8wyJUm_rpXhHhaLFjhVykHplMGYL-cspedTmepS0PZbk480fer77FsHYBypnyjHx_yViVGG31kdJb2eJ8k_tANyoCGBTlqdKqi3-k-sIqEbXeM4CsQMV9da-pgmmEd5QFhFqisxvpPTjQH7uhv7xGLrrDmTc95GOAksKOoeXEbytgESBkTkN9BA4Pwe9_EhWfqU4FNtpYtNOUibmC1uhRG1DXoyO5PZaq1Nt92AH4bade6DMcuXGUL4KnnV1jRZZb2RZtvfP0XdRvwQGRQ3CksjnpJ-3efohmI1-Vuqt7bubDXTCZpQXcIOViNG9O0uJR763bz-BuJ9a5kHgRHhVqPl-Vj202TG2kKO76f8xH5fSAan-fwejk603OtEjLuKg-JzgvvIcEyAwhCeReX4GJdmPszUBhGUvgCGVLO3qEEmuzActznp5pZy0Nlm_xV7VfTy_q4UjsA4p_IGKk_ifGa0k_qEZkIQy_uXfTcZFJ2MFLFXzijJHxdst1Eaf2ZdWI6NRPZCUl0tm5xu2l_Iwbn_K6po_M_Bwdl2kyqZNpk7Vkfv3r9bHusLf6oRtW6xTvnTwnNWp9zW06a7IesB8-vLcFqvE4_kfZ9lGqIb8Oe=w347-h309-s-no?authuser=0",
     nivel: "Beginner",
     descripcion: "Venus is known for its thick atmosphere.",
-    alignItems: 'center',
-    justifyContent: 'center',
-    with: 180
-  },
-  {
-    nombre: "Earth",
-    imagen: "https://www.dropbox.com/scl/fi/qbxl2476cn5j7mtfd0fde/planeta1.png?rlkey=nfjtk4am96ke7pop8gp709cvv&dl=0",
-    nivel: "Beginner",
-    descripcion: "Earth is the third planet from the Sun and the only one known to support life.",
     alignItems: 'flex-end',
-    justifyContent: 'flex-end',
-    with: 110
-  },
-  {
-    nombre: "Mars",
-    imagen: "https://previews.dropbox.com/p/thumb/ACDpnwK7kJ2k3lS9sxt8nP8SyB0LqRo_dQvm0ijgkCuvlmeHy2zDDHF8BrcWVXR6L2PX_Lyd9xUGd4_YmcPdM0uQZBb9RyvFrPixfNd81rq_RzcS7C3FZCAenBaTY2srtXszlUYs-3AJejbvm8KRVR9saE-xTO2OprWDj9zpPf3hlO_9-59rP8_cdg4FCcb58N8FUXDJ37AEf1BM93ssd-LtSx7SzHXId1eE3Z3JMZMB6dL6u3wIL7oweYcb5opxI7ct9UMCbb7wmwIeTZLL3eHW9pHIkMfjfhoaT48NJeKPfRQ9wpu6yNNQYQ6acUSbZmVuZmMlvUyzvmD4AmBcX1gz/p.png",
-    nivel: "Intermediate",
-    descripcion: "Mars is often called the Red Planet.",
-    alignItems: 'center',
     justifyContent: 'center',
-    with: 130
-  }
+    with: 180,
+    height: 90
+  },
+  
 ]
       
   

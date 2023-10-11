@@ -12,7 +12,7 @@ const PlanetList = () => {
       data={planetas}
       style={styles.container}
       renderItem={({ item: planeta }) => (
-        <View style={[styles.planetaContainer, { alignItems: planeta.alignItems, justifyContent: planeta.justifyContent }]}>
+        <View style={[styles.planetaContainer, { alignItems: planeta.alignItems, justifyContent: planeta.justifyContent, height: planeta.height }]}>
           <Image
             source={{ uri: planeta.imagen }}
             style={[styles.planetaImagen, { width: planeta.with }]}
@@ -34,9 +34,12 @@ export default PlanetList;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingTop: 40
+
   },
   planetaContainer: {
-    width: Dimensions.get('window').width - 20,
+    width: Dimensions.get('window').width - 80,
+    height: 150,
     padding: 10,
   },
   planetaImagen: {
@@ -47,6 +50,8 @@ const styles = StyleSheet.create({
   },
   text: {
     // Estilos de texto
+    justifyContent: 'center',
+    alignItems: 'center',
     color: 'white'
   },
 })

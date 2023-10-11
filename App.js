@@ -20,6 +20,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Planets from './src/Components/planets';
+import Tabs from './src/Components/tabs';
 
 const ANGLE = 10;
 const TIME = 100;
@@ -72,13 +73,13 @@ function DetailsScreen({ navigation }) {
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <View style={styles.container}>
       <ImageBackground  source={require('./assets/background.jpg')} style={[styles.container]}>
-
-        <Planets></Planets>
-        <Animated.View entering={FadeIn.duration(2000)} style={styles.containerBtn}>
-          <TouchableOpacity onPress={() => navigation.navigate('Home')} style={styles.button}>
-            <Text style={styles.buttonText}>Iniciar</Text>
-          </TouchableOpacity>
-        </Animated.View>
+          <Planets></Planets>
+          <Animated.View entering={FadeIn.duration(2000)} style={styles.containerBtn}>
+            <TouchableOpacity onPress={() => navigation.navigate('Home')} style={styles.button}>
+              <Text style={styles.buttonText}>Iniciar</Text>
+            </TouchableOpacity>
+          </Animated.View>
+        <Tabs></Tabs>
       </ImageBackground>
       </View>
     </View>
