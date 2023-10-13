@@ -15,64 +15,49 @@ import Animated, {
   withSequence,
 } from 'react-native-reanimated';
 import { useNavigation } from '@react-navigation/native';
-import LottieView from 'lottie-react-native';
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { BlurView } from 'expo-blur';
 
 import Planets from './src/Components/planets';
 import Tabs from './src/Components/tabs';
+
+import HomeScreen from './src/screens/HomeScreen';
 
 const ANGLE = 10;
 const TIME = 100;
 const EASING = Easing.elastic(1.5);
 
+const HomeStack = createNativeStackNavigator();
 
-function HomeScreen({ navigation }) {
-
-  const animation = useRef(null);
-  useEffect(() => {
-    // You can control the ref programmatically, rather than using autoPlay
-    // animation.current?.play();
-  }, []);
-
-  
+function HomeStackScreen() {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <View style={styles.container}>
-      <ImageBackground  source={require('./assets/background.jpg')} style={[styles.container]}>
-        <Animated.Image entering={BounceIn.duration(1000)} source={require('./assets/logo.png')} style={[styles.logo]} />
-        <Animated.Image entering={FadeIn.duration(2000)} source={require('./assets/planetas.png')} style={[styles.planetas]} />
-        {/* <Animated.Image entering={BounceIn.duration(3000)} source={require('./assets/astronauta.png')} style={[styles.astronauta]} />  */}
-        <View style={styles.astronauta}>
-      <LottieView
-        autoPlay
-        ref={animation}
-        style={{
-          width: 500,
-          height: 500,
-        }}
-        // Find more Lottie files at https://lottiefiles.com/featured
-        source={require('./assets/animation_astronauta.json')}
-      />
-      
-    </View>
-        <Animated.View entering={FadeIn.duration(2000)} style={styles.containerBtn}>
-          <TouchableOpacity onPress={() => navigation.navigate('Details')} style={styles.button}>
-            <Text style={styles.buttonText}>Iniciar</Text>
-          </TouchableOpacity>
-        </Animated.View>
-
-      </ImageBackground>
-      </View>
-    </View>
+    <HomeStack.Navigator>
+      <HomeStack.Screen name="Home" component={HomeScreen} />
+      <HomeStack.Screen name="Details" component={DetailsScreen} />
+    </HomeStack.Navigator>
   );
 }
+
+const SettingsStack = createNativeStackNavigator();
+
+function SettingsStackScreen() {
+  return (
+    <SettingsStack.Navigator>
+      <SettingsStack.Screen name="Settings" component={SettingsScreen} />
+      <SettingsStack.Screen name="Details" component={DetailsScreen} />
+    </SettingsStack.Navigator>
+  );
+}
+
 
 function DetailsScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <View style={styles.container}>
-      <ImageBackground  source={require('./assets/background.jpg')} style={[styles.container]}>
+      <ImageBackground  source={require('./src/assets/images/background.jpg')} style={[styles.container]}>
           <Planets></Planets>
           <Animated.View entering={FadeIn.duration(2000)} style={styles.containerBtn}>
             <TouchableOpacity onPress={() => navigation.navigate('Home')} style={styles.button}>
@@ -87,7 +72,7 @@ function DetailsScreen({ navigation }) {
 }
 
 const Stack = createNativeStackNavigator();
-
+const Tab = createBottomTabNavigator();
 
 export default function App({ navigation }) {
   const rotation = useSharedValue(0);
@@ -122,24 +107,25 @@ export default function App({ navigation }) {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen 
-          name="Home" 
-          component={HomeScreen} 
-          options={{
-            headerTransparent: true,
-          }}
-        />
-        <Stack.Screen 
-          name="Details" 
-          component={DetailsScreen} 
-          options={{
-            headerTransparent: true,
-          }}
-        />
-      </Stack.Navigator>
+      <Tab.Navigator
+        
+        screenOptions={{ 
+          headerShown: false,
+          tabBarStyle: {
+              height: 60,
+              position: 'absolute',
+              bottom: 16,
+              right: 16,
+              left: 16,
+              borderRadius: 25,
+              backgroundColor: 'rgba(255, 255, 255, 0.5)'
+          },
+          
+        }}>
+        <Tab.Screen name="Home" component={HomeStackScreen} />
+        <Tab.Screen name="Settings" component={SettingsStackScreen} />
+      </Tab.Navigator>
     </NavigationContainer>
-    
   );
 }
 

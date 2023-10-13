@@ -19,11 +19,11 @@ const Tabs = () => {
         <View style={styles.tabs}>
             <View style={styles.tabs2}>
                 <TouchableOpacity onPress={() => navigation.navigate('Home')}>
-                    <Image source={require('../../assets/icons/home.png')} style={styles.image} />
+                    <Image source={require('../assets/icons/home.png')} style={styles.image} />
                 </TouchableOpacity>
-                <Image source={require('../../assets/icons/section2.png')} style={styles.image} />
-                <Image source={require('../../assets/icons/section3.png')} style={styles.image} />
-                <Image source={require('../../assets/icons/section4.png')} style={styles.image} />
+                <Image source={require('../assets/icons/section2.png')} style={styles.image} />
+                <Image source={require('../assets/icons/section3.png')} style={styles.image} />
+                <Image source={require('../assets/icons/section4.png')} style={styles.image} />
             </View>
         </View>
       </View>

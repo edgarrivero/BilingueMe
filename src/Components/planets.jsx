@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text,Image,StyleSheet, FlatList, Dimensions, TouchableOpacity  } from 'react-native'; // Asegúrate de importar las dependencias necesarias.
-import planetas from '../../assets/data/planetas';
+import planetas from '../../src/assets/data/planetas';
 import Animated from 'react-native-reanimated';
 import { useNavigation } from '@react-navigation/native';
 
