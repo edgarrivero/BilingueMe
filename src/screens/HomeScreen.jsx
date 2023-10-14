@@ -38,7 +38,7 @@ function HomeScreen({ navigation }) {
         
       </View>
           <Animated.View entering={FadeIn.duration(2000)} style={styles.containerBtn}>
-            <TouchableOpacity onPress={() => navigation.navigate('Details')} style={styles.button}>
+            <TouchableOpacity onPress={() => navigation.navigate('Sparkles')} style={styles.button}>
               <Text style={styles.buttonText}>Iniciar</Text>
             </TouchableOpacity>
           </Animated.View>

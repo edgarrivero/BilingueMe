@@ -34,11 +34,11 @@
    return (
      <HomeStack.Navigator>
        <HomeStack.Screen 
-         name="Home" 
+         name="HomeStack" 
          component={HomeScreen} 
          options={{
            headerShown: false,
-           tabBarVisibility: false
+           
          }}
        />
      </HomeStack.Navigator>
@@ -143,6 +143,7 @@
             //   return <CustomTab route={route} />;
             // },
             headerShown: false,
+            tabBarVisible: false,
             tabBarStyle: {
                 height: 60,
                 position: 'absolute',
@@ -162,12 +163,12 @@
               tabBarLabel: "Home",
               tabBarIcon: ({focused,color,size}) => {
                 if(focused){
-                  return (<Image source={require('./src/assets/icons/home-solid.png')} style={{ width: 24, height: 24 }} />);
+                  return (<Image source={require('./src/assets/icons/home-solid.png')} style={styles.icon} />);
                 }else{
-                  return (<Image source={require('./src/assets/icons/home-line.png')} style={{ width: 24, height: 24 }} />);
+                  return (<Image source={require('./src/assets/icons/home-line.png')} style={styles.icon} />);
                 }
               },
-              tabBarVisibility: false
+              tabBarVisible: false,
             }}
           />
           <Tab.Screen 
@@ -177,9 +178,9 @@
               tabBarLabel: "Sparkles",
               tabBarIcon: ({focused,color,size}) => {
                 if(focused){
-                  return (<Image source={require('./src/assets/icons/sparkles-solid.png')} style={{ width: 24, height: 24 }} />);
+                  return (<Image source={require('./src/assets/icons/sparkles-solid.png')} style={styles.icon} />);
                 }else{
-                  return (<Image source={require('./src/assets/icons/sparkles-line.png')} style={{ width: 24, height: 24 }} />);
+                  return (<Image source={require('./src/assets/icons/sparkles-line.png')} style={styles.icon} />);
                 }
               },
               headerShown: false,
@@ -192,9 +193,9 @@
               tabBarLabel: "Books",
               tabBarIcon: ({focused,color,size}) => {
                 if(focused){
-                  return (<Image source={require('./src/assets/icons/books-solid.png')} style={{ width: 24, height: 24 }} />);
+                  return (<Image source={require('./src/assets/icons/books-solid.png')} style={styles.icon} />);
                 }else{
-                  return (<Image source={require('./src/assets/icons/books-line.png')} style={{ width: 24, height: 24 }} />);
+                  return (<Image source={require('./src/assets/icons/books-line.png')} style={styles.icon} />);
                 }
               },
               headerShown: false,
@@ -207,9 +208,9 @@
               tabBarLabel: "Settings",
               tabBarIcon: ({focused,color,size}) => {
                 if(focused){
-                  return (<Image source={require('./src/assets/icons/setting-solid.png')} style={{ width: 24, height: 24 }} />);
+                  return (<Image source={require('./src/assets/icons/setting-solid.png')} style={styles.icon} />);
                 }else{
-                  return (<Image source={require('./src/assets/icons/setting-line.png')} style={{ width: 24, height: 24 }} />);
+                  return (<Image source={require('./src/assets/icons/setting-line.png')} style={styles.icon} />);
                 }
               },
               headerShown: false,
@@ -270,5 +271,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
 
   },
+  icon: { width: 30, height: 30 }
 });
 
