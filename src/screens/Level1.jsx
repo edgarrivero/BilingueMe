@@ -23,7 +23,7 @@ function level1Screen() {
             <Animated.Image entering={BounceIn.duration(1000)} source={require('../assets/images/level1-astronaut.png')} style={[styles.astronaut]} />
             <Animated.Image entering={BounceIn.duration(1000)} source={require('../assets/images/soil.png')} style={[styles.soil]} />
             <Text style={styles.title}>Completa el espacio en blanco</Text>
-            <Text style={styles.subTitle}>No, I do _____ have a wife.</Text>
+            <Text style={styles.subTitle}>What's your favorite movie or book?</Text>
             <View style={styles.question}>
                 <Text style={styles.title}>Level1</Text>
             </View>
@@ -46,9 +46,10 @@ const styles = StyleSheet.create({
     },
     subTitle: {
         color: "white",
-        fontSize: 18,
+        fontSize: 20,
         paddingTop: 40,
-        marginLeft: 100
+        marginLeft: 150,
+        marginEnd: 40,
     },
     soil: {
         position: 'absolute',
