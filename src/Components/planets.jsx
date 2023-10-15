@@ -15,7 +15,7 @@ const PlanetList = () => {
       data={planetas}
       style={styles.container}
       renderItem={({ item: planeta }) => (
-        <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+        <TouchableOpacity onPress={() => navigation.navigate(planeta.navigateTo)}>
           <View style={[styles.planetaContainer, { alignItems: planeta.alignItems, justifyContent: planeta.justifyContent, height: planeta.height }]}>
             <Image
               source={{ uri: planeta.imagen }}

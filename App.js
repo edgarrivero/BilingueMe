@@ -24,6 +24,17 @@
  import SettingsScreen from './src/screens/SettingsScreen';
  import SparklesScreen from './src/screens/SparklesScreen';
  import BooksScreen from './src/screens/BooksScreen';
+ import level1Screen from './src/screens/Level1';
+
+ //Icons
+import homeSolidIcon from './src/assets/icons/home-solid.png';
+import homeLineIcon from './src/assets/icons/home-line.png';
+import sparklesSolidIcon from './src/assets/icons/sparkles-solid.png';
+import sparklesLineIcon from './src/assets/icons/sparkles-line.png';
+import booksSolidIcon from './src/assets/icons/books-solid.png';
+import booksLineIcon from './src/assets/icons/books-line.png';
+import settingsSolidIcon from './src/assets/icons/setting-solid.png';
+import settingsLineIcon from './src/assets/icons/setting-line.png';
 
 
  const ANGLE = 10;
@@ -51,6 +62,13 @@
        <SparklesStack.Screen 
          name="SparklesStack" 
          component={SparklesScreen} 
+         options={{
+           headerShown: false,
+         }}
+       />
+       <SparklesStack.Screen 
+         name="level1" 
+         component={level1Screen} 
          options={{
            headerShown: false,
          }}
@@ -139,9 +157,6 @@
       <NavigationContainer>
         <Tab.Navigator
           screenOptions={({ route }) => ({
-            // tabBarIcon: ({ focused, color, size }) => {
-            //   return <CustomTab route={route} />;
-            // },
             headerShown: false,
             tabBarVisible: false,
             tabBarStyle: {
@@ -162,11 +177,8 @@
             options={{
               tabBarLabel: "Home",
               tabBarIcon: ({focused,color,size}) => {
-                if(focused){
-                  return (<Image source={require('./src/assets/icons/home-solid.png')} style={styles.icon} />);
-                }else{
-                  return (<Image source={require('./src/assets/icons/home-line.png')} style={styles.icon} />);
-                }
+                let iconName = focused ? homeSolidIcon : homeLineIcon;
+                return <Image source={iconName} style={styles.icon} />;
               },
               tabBarVisible: false,
             }}
@@ -177,11 +189,8 @@
             options={{
               tabBarLabel: "Sparkles",
               tabBarIcon: ({focused,color,size}) => {
-                if(focused){
-                  return (<Image source={require('./src/assets/icons/sparkles-solid.png')} style={styles.icon} />);
-                }else{
-                  return (<Image source={require('./src/assets/icons/sparkles-line.png')} style={styles.icon} />);
-                }
+                let iconName = focused ? sparklesSolidIcon : sparklesLineIcon;
+                return <Image source={iconName} style={styles.icon} />;
               },
               headerShown: false,
             }}
@@ -192,11 +201,8 @@
             options={{
               tabBarLabel: "Books",
               tabBarIcon: ({focused,color,size}) => {
-                if(focused){
-                  return (<Image source={require('./src/assets/icons/books-solid.png')} style={styles.icon} />);
-                }else{
-                  return (<Image source={require('./src/assets/icons/books-line.png')} style={styles.icon} />);
-                }
+                let iconName = focused ? booksSolidIcon : booksLineIcon;
+                return <Image source={iconName} style={styles.icon} />;
               },
               headerShown: false,
             }}
@@ -207,11 +213,8 @@
             options={{
               tabBarLabel: "Settings",
               tabBarIcon: ({focused,color,size}) => {
-                if(focused){
-                  return (<Image source={require('./src/assets/icons/setting-solid.png')} style={styles.icon} />);
-                }else{
-                  return (<Image source={require('./src/assets/icons/setting-line.png')} style={styles.icon} />);
-                }
+                let iconName = focused ? settingsSolidIcon : settingsLineIcon;
+                return <Image source={iconName} style={styles.icon} />;
               },
               headerShown: false,
             }}

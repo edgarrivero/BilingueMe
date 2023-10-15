@@ -23,11 +23,6 @@ function SparklesScreen() {
       <View style={styles.container}>
       <ImageBackground  source={require('../assets/images/background.jpg')} style={[styles.container]}>
           <PlanetList></PlanetList>
-          <Animated.View entering={FadeIn.duration(2000)} style={styles.containerBtn}>
-            <TouchableOpacity onPress={() => navigation.navigate('Home')} style={styles.button}>
-              <Text style={styles.buttonText}>Iniciar</Text>
-            </TouchableOpacity>
-          </Animated.View>
       </ImageBackground>
       </View>
     </View>
