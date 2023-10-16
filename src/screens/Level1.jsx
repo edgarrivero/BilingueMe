@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, ImageBackground, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, ImageBackground, Image, StyleSheet } from 'react-native';
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
@@ -15,6 +15,8 @@ import Animated, {
   withSequence,
 } from 'react-native-reanimated';
 
+import Svg, { Path } from 'react-native-svg';
+import { SettingsSvg } from '../assets/data/svgs';
 
 function level1Screen() {
   return (
@@ -26,6 +28,8 @@ function level1Screen() {
             <Text style={styles.subTitle}>What's your favorite movie or book?</Text>
             <View style={styles.question}>
                 <Text style={styles.title}>Level1</Text>
+                <SettingsSvg />
+                <Animated.Image source={require('../assets/svgs/sparkles.svg')} style={{width: 100,height:100}} />
             </View>
         </ImageBackground>
     </View>
