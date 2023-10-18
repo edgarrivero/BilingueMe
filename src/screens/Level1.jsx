@@ -16,7 +16,7 @@ import Animated, {
 } from 'react-native-reanimated';
 
 import Svg, { Path } from 'react-native-svg';
-import { SettingsSvg } from '../assets/data/svgs';
+import { SettingsSvg, Shape1Svg } from '../assets/data/svgs';
 
 function level1Screen() {
   return (
@@ -29,6 +29,7 @@ function level1Screen() {
             <View style={styles.question}>
                 <Text style={styles.title}>Level1</Text>
                 <SettingsSvg />
+                <Shape1Svg />
                 <Animated.Image source={require('../assets/svgs/sparkles.svg')} style={{width: 100,height:100}} />
             </View>
         </ImageBackground>

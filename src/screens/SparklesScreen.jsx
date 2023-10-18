@@ -14,8 +14,11 @@ import Animated, {
   withTiming,
   withSequence,
 } from 'react-native-reanimated';
-
+import { useNavigation } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import PlanetList from '../Components/planets';
+import Tabs from '../Components/tabs';
 
 function SparklesScreen() {
   return (
@@ -24,6 +27,7 @@ function SparklesScreen() {
       <ImageBackground  source={require('../assets/images/background.jpg')} style={[styles.container]}>
           <PlanetList></PlanetList>
       </ImageBackground>
+      <Tabs></Tabs>
       </View>
     </View>
     
