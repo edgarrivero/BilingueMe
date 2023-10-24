@@ -12,23 +12,28 @@
    const handleImagePress = (screenName) => {
      navigation.navigate(screenName);
    };
+
    return (
        <View style={[styles.bottomView, { top: windowHeight - bottomViewHeight }]}>
          {/* Contenido del elemento View en la parte inferior */}
          <View style={styles.tabs}>
-             <BlurView
+             <View
                 style={styles.tabs2}
                 intensity={10}
               >
                 <TouchableOpacity onPress={() => navigation.navigate('Home')}>
-                <Image source={require('../assets/icons/home-solid.png')} style={styles.image} />
+                  <Image source={require('../assets/icons/home-solid.png')} style={styles.image} />
                 </TouchableOpacity>
-                <Image source={require('../assets/icons/home-solid.png')} style={styles.image} />
-                <Image source={require('../assets/icons/home-solid.png')} style={styles.image} />
-                <View style={styles.vector}>
-                  <SettingsSvg  style={styles.iconSettings} />
-                </View>
-              </BlurView>
+                <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+                  <Image source={require('../assets/icons/sparkles-line.png')} style={styles.image} />
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+                  <Image source={require('../assets/icons/books-line.png')} style={styles.image} />
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+                  <Image source={require('../assets/icons/setting-line.png')} style={styles.image} />
+                </TouchableOpacity>
+              </View>
          </View>
        </View>
    );
@@ -51,7 +56,6 @@
      alignItems: 'center',
      width: Dimensions.get('window').width - 70,
      height: 70,
-     backgroundColor: 'rgba(255, 255, 255, 0.2)',
      borderRadius: 30,
      margin: 5, 
      flexDirection: 'row',
@@ -63,9 +67,6 @@
      justifyContent: 'center',
      alignItems: 'center',
      margin: 15, // Añade un margen para separar los elementos
-   },
-   iconSettings: {
-    backgroundColor: 'blue'
    },
    vector: {
     width: '40'

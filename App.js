@@ -1,5 +1,5 @@
  import React, { useRef, useEffect } from 'react';
- import { StyleSheet, View, Image, ImageBackground, TouchableOpacity, Text,  handleButtonPress,Button, navigation  } from 'react-native';
+ import { StyleSheet, Image  } from 'react-native';
  import Animated, {
    useSharedValue,
    useAnimatedStyle,
@@ -24,7 +24,7 @@
  import SettingsScreen from './src/screens/SettingsScreen';
  import SparklesScreen from './src/screens/SparklesScreen';
  import BooksScreen from './src/screens/BooksScreen';
- import level1Screen from './src/screens/Level1';
+ import Level1Screen from './src/screens/Level1';
 
 
 
@@ -44,7 +44,76 @@ import LottieView from 'lottie-react-native';
  const TIME = 100;
  const EASING = Easing.elastic(1.5);
  
+ const Tab = createBottomTabNavigator();
  const Stack = createNativeStackNavigator();
+
+ function HomeTabs() {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name="HomeScreen" component={HomeScreen} />
+      <Tab.Screen name="SparklesScreen" component={BooksScreen} />
+    </Tab.Navigator>
+  );
+}
+
+function SparklesTabs() {
+  return (
+    <Tab.Navigator
+      screenOptions={({ route }) => ({
+        headerShown: false,
+        tabBarVisible: false,
+        tabBarStyle: {
+            height: 60,
+            position: 'absolute',
+            bottom: 16,
+            right: 16,
+            left: 16,
+            borderRadius: 25,
+            backgroundColor: 'rgba(255, 255, 255, 0.5)',
+        },
+      })}
+    >
+      <Tab.Screen 
+        name="Sparkles" 
+        component={SparklesScreen} 
+        options={{
+            tabBarLabel: "Sparkles",
+            tabBarIcon: ({focused,color,size}) => {
+              let iconName = focused ? sparklesSolidIcon : sparklesLineIcon;
+              return <Image source={iconName} style={styles.icon} />;
+            },
+            headerShown: false,
+        }}
+      />
+      <Tab.Screen 
+        name="Books" 
+        component={BooksScreen} 
+        options={{
+          tabBarLabel: "Books",
+          tabBarIcon: ({focused,color,size}) => {
+            let iconName = focused ? booksSolidIcon : booksLineIcon;
+            return <Image source={iconName} style={styles.icon} />;
+          },
+          headerShown: false,
+        }}
+      />
+      <Tab.Screen 
+        name="Settings" 
+        component={SettingsScreen} 
+        options={{
+          tabBarLabel: "Settings",
+          tabBarIcon: ({focused,color,size}) => {
+            let iconName = focused ? settingsSolidIcon : settingsLineIcon;
+            return <Image source={iconName} style={styles.icon} />;
+          },
+          headerShown: false,
+        }}
+      />
+    </Tab.Navigator>
+  );
+}
+
+
 
  export default function App() {
    const rotation = useSharedValue(0);
@@ -74,79 +143,94 @@ import LottieView from 'lottie-react-native';
    };
 
    return (
-    // <NavigationContainer>
-    //   <Stack.Navigator initialRouteName="Home">
-    //     <Stack.Screen name="Home" component={HomeScreen} />
-    //     <Stack.Screen name="Sparkles" component={SparklesScreen} />
-    //   </Stack.Navigator>
-    // </NavigationContainer>
+     <NavigationContainer>
+       <Stack.Navigator 
+          initialRouteName="Home"
+        >
+         <Stack.Screen name="Home" component={HomeScreen} />
+         <Stack.Screen name="Sparkles" component={SparklesTabs} />
+         <Stack.Screen name="Level1" component={Level1Screen} />
+       </Stack.Navigator>
+     </NavigationContainer>
 
-       <NavigationContainer>
-         <Stack.Navigator
-           screenOptions={({ route }) => ({
-             headerShown: false,
-             tabBarVisible: false,
-             tabBarStyle: {
-                 height: 60,
-                 position: 'absolute',
-                 bottom: 16,
-                 right: 16,
-                 left: 16,
-                 borderRadius: 25,
-                 backgroundColor: 'rgba(255, 255, 255, 0.5)',
-             },
-           })}
-          >
-           <Stack.Screen 
-             name="Home" 
-             component={HomeScreen} 
-            //  options={{
-            //    tabBarLabel: "Home",
-            //    tabBarIcon: ({focused,color,size}) => {
-            //      let iconName = focused ? homeSolidIcon : homeLineIcon;
-            //      return <Image source={iconName} style={styles.icon} />;
-            //    },
-            //    tabBarVisible: false
-            //  }}
-           />
-           <Stack.Screen 
-             name="Sparkles" 
-             component={SparklesScreen} 
-            //  options={{
-            //    tabBarLabel: "Sparkles",
-            //    tabBarIcon: ({focused,color,size}) => {
-            //      let iconName = focused ? sparklesSolidIcon : sparklesLineIcon;
-            //      return <Image source={iconName} style={styles.icon} />;
-            //    },
-            //    headerShown: false,
-            //  }}
-           />
-           {/* <Stack.Screen 
-             name="Books" 
-             component={BooksScreen} 
-             options={{
-               tabBarLabel: "Books",
-               tabBarIcon: ({focused,color,size}) => {
-                 let iconName = focused ? booksSolidIcon : booksLineIcon;
-                 return <Image source={iconName} style={styles.icon} />;
-               },
-               headerShown: false,
-             }}
-           />
-           <Stack.Screen 
-             name="Settings" 
-             component={SettingsScreen} 
-             options={{
-               tabBarLabel: "Settings",
-               tabBarIcon: ({focused,color,size}) => {
-                 let iconName = focused ? settingsSolidIcon : settingsLineIcon;
-                 return <Image source={iconName} style={styles.icon} />;
-               },
-               headerShown: false,
-             }}
-           /> */}
-         </Stack.Navigator>
-       </NavigationContainer>
+      //  <NavigationContainer>
+      //    <Stack.Navigator
+      //      screenOptions={({ route }) => ({
+      //        headerShown: false,
+      //        tabBarVisible: false,
+      //        tabBarStyle: {
+      //            height: 60,
+      //            position: 'absolute',
+      //            bottom: 16,
+      //            right: 16,
+      //            left: 16,
+      //            borderRadius: 25,
+      //            backgroundColor: 'rgba(255, 255, 255, 0.5)',
+      //        },
+      //      })}
+      //     >
+      //      <Stack.Screen 
+      //        name="Home" 
+      //        component={HomeScreen} 
+      //       //  options={{
+      //       //    tabBarLabel: "Home",
+      //       //    tabBarIcon: ({focused,color,size}) => {
+      //       //      let iconName = focused ? homeSolidIcon : homeLineIcon;
+      //       //      return <Image source={iconName} style={styles.icon} />;
+      //       //    },
+      //       //    tabBarVisible: false
+      //       //  }}
+      //      />
+      //      <Stack.Screen 
+      //        name="Sparkles" 
+      //        component={SparklesScreen} 
+      //       //  options={{
+      //       //    tabBarLabel: "Sparkles",
+      //       //    tabBarIcon: ({focused,color,size}) => {
+      //       //      let iconName = focused ? sparklesSolidIcon : sparklesLineIcon;
+      //       //      return <Image source={iconName} style={styles.icon} />;
+      //       //    },
+      //       //    headerShown: false,
+      //       //  }}
+      //      />
+      //      <Stack.Screen 
+      //        name="Level1" 
+      //        component={Level1Screen} 
+      //       //  options={{
+      //       //    tabBarLabel: "Sparkles",
+      //       //    tabBarIcon: ({focused,color,size}) => {
+      //       //      let iconName = focused ? sparklesSolidIcon : sparklesLineIcon;
+      //       //      return <Image source={iconName} style={styles.icon} />;
+      //       //    },
+      //       //    headerShown: false,
+      //       //  }}
+      //      />
+      //      {/* <Stack.Screen 
+      //        name="Books" 
+      //        component={BooksScreen} 
+      //        options={{
+      //          tabBarLabel: "Books",
+      //          tabBarIcon: ({focused,color,size}) => {
+      //            let iconName = focused ? booksSolidIcon : booksLineIcon;
+      //            return <Image source={iconName} style={styles.icon} />;
+      //          },
+      //          headerShown: false,
+      //        }}
+      //      />
+      //      <Stack.Screen 
+      //        name="Settings" 
+      //        component={SettingsScreen} 
+      //        options={{
+      //          tabBarLabel: "Settings",
+      //          tabBarIcon: ({focused,color,size}) => {
+      //            let iconName = focused ? settingsSolidIcon : settingsLineIcon;
+      //            return <Image source={iconName} style={styles.icon} />;
+      //          },
+      //          headerShown: false,
+      //        }}
+      //      /> */}
+      //    </Stack.Navigator>
+      //  </NavigationContainer>
    );
  }
 

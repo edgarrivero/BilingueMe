@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, ImageBackground, StyleSheet } from 'react-native';
+import { View,Button, Text, TouchableOpacity, ImageBackground, StyleSheet, Image } from 'react-native';
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
@@ -19,15 +19,37 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import PlanetList from '../Components/planets';
 import Tabs from '../Components/tabs';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import BooksScreen from './BooksScreen';
+import HomeScreen from './HomeScreen';
+import SettingsScreen from './SettingsScreen';
 
-function SparklesScreen() {
+ //Icons
+ import homeSolidIcon from '../assets/icons/home-solid.png';
+ import homeLineIcon from '../assets/icons/home-line.png';
+ import sparklesSolidIcon from '../assets/icons/sparkles-solid.png';
+ import sparklesLineIcon from '../assets/icons/sparkles-line.png';
+ import booksSolidIcon from '../assets/icons/books-solid.png';
+ import booksLineIcon from '../assets/icons/books-line.png';
+ import settingsSolidIcon from '../assets/icons/setting-solid.png';
+ import settingsLineIcon from '../assets/icons/setting-line.png';
+ import LottieView from 'lottie-react-native';
+
+
+
+const Tab = createBottomTabNavigator();
+
+function SparklesScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <View style={styles.container}>
       <ImageBackground  source={require('../assets/images/background.jpg')} style={[styles.container]}>
-          <PlanetList></PlanetList>
+          <PlanetList navigation={navigation}></PlanetList>
       </ImageBackground>
-      <Tabs></Tabs>
+      <Button
+        title="Go to Level1"
+        onPress={() => navigation.navigate('Level1')}
+      />
       </View>
     </View>
     
@@ -84,6 +106,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
 
   },
+  icon: { width: 30, height: 30 }
 });
 
 export default SparklesScreen;

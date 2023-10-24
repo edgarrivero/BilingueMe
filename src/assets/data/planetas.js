@@ -8,7 +8,7 @@ export default [
     justifyContent: 'flex-start', // Alineación vertical
     with: 150,
     height: 100,
-    navigateTo: "level1",
+    navigateTo: "Level1",
   },
   {
     nombre: "Venus",
