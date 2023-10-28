@@ -47,76 +47,73 @@ import LottieView from 'lottie-react-native';
  const Tab = createBottomTabNavigator();
  const Stack = createNativeStackNavigator();
 
- function HomeTabs() {
-  return (
-    <Tab.Navigator>
-      <Tab.Screen name="HomeScreen" component={HomeScreen} />
-      <Tab.Screen name="SparklesScreen" component={BooksScreen} />
-    </Tab.Navigator>
-  );
-}
-
-function SparklesTabs() {
-  return (
-    <Tab.Navigator
-      screenOptions={({ route }) => ({
-        headerShown: false,
-        tabBarVisible: false,
-        tabBarStyle: {
-            height: 60,
-            position: 'absolute',
-            bottom: 16,
-            right: 16,
-            left: 16,
-            borderRadius: 25,
-            backgroundColor: 'rgba(255, 255, 255, 0.5)',
-            
-        },
-        tabBarLabelStyle: {
-          color: 'white',
-          paddingBottom: 5
-        },
-      })}
-    >
-      <Tab.Screen 
-        name="Sparkles" 
-        component={SparklesScreen} 
-        options={{
-            tabBarLabel: "Sparkles",
-            tabBarIcon: ({focused,color,size}) => {
-              let iconName = focused ? sparklesSolidIcon : sparklesLineIcon;
-              return <Image source={iconName} style={styles.icon} />;
-            },
-            headerShown: false,
-        }}
-      />
-      <Tab.Screen 
-        name="Books" 
-        component={BooksScreen} 
-        options={{
-          tabBarLabel: "Books",
-          tabBarIcon: ({focused,color,size}) => {
-            let iconName = focused ? booksSolidIcon : booksLineIcon;
-            return <Image source={iconName} style={styles.icon} />;
-          },
-          headerShown: false,
-        }}
-      />
-      <Tab.Screen 
-        name="Settings" 
-        component={SettingsScreen} 
-        options={{
-          tabBarLabel: "Settings",
-          tabBarIcon: ({focused,color,size}) => {
-            let iconName = focused ? settingsSolidIcon : settingsLineIcon;
-            return <Image source={iconName} style={styles.icon} />;
-          },
-          headerShown: false,
-        }}
-      />
-    </Tab.Navigator>
-  );
-}
+// function SparklesTabs() {
+//   return (
+//     <Tab.Navigator
+//       screenOptions={({ route }) => ({
+//         headerShown: false,
+//         tabBarVisible: false,
+//         tabBarStyle: {
+//             height: 60,
+//             position: 'absolute',
+//             bottom: 16,
+//             right: 16,
+//             left: 16,
+//             borderRadius: 25,
+//             backgroundColor: 'rgba(255, 255, 255, 0.5)',
+//             padding: 7,
+//             shadowOpacity: 0
+//         },
+//         tabBarLabelStyle: {
+//           color: 'white',
+//           fontWeight: 'bold',
+//           paddingBottom: 5,
+//         },
+//       })}
+//     >
+//       <Tab.Screen 
+//         name="Sparkles" 
+//         component={SparklesScreen} 
+//         options={{
+//             tabBarLabel: "Sparkles",
+//             tabBarIcon: ({focused,color,size}) => {
+//               let iconName = focused ? sparklesSolidIcon : sparklesLineIcon;
+//               return <Image source={iconName} style={styles.icon} />;
+//             },
+//             headerShown: false,
+//             tabBarActiveTintColor: {
+//               borderBottomWidth: 3,
+//               borderBottomColor: '#F7931E'
+//             },
+//         }}
+//       />
+//       <Tab.Screen 
+//         name="Books" 
+//         component={BooksScreen} 
+//         options={{
+//           tabBarLabel: "Books",
+//           tabBarIcon: ({focused,color,size}) => {
+//             let iconName = focused ? booksSolidIcon : booksLineIcon;
+//             return <Image source={iconName} style={styles.icon} />;
+//           },
+//           headerShown: false,
+//         }}
+//       />
+//       <Tab.Screen 
+//         name="Settings" 
+//         component={SettingsScreen} 
+//         options={{
+//           tabBarLabel: "Settings",
+//           tabBarIcon: ({focused,color,size}) => {
+//             let iconName = focused ? settingsSolidIcon : settingsLineIcon;
+//             return <Image source={iconName} style={styles.icon} />;
+//           },
+//           headerShown: false,
+//         }}
+//       />
+//     </Tab.Navigator>
+//   );
+// }
 
 
 
@@ -157,7 +154,9 @@ function SparklesTabs() {
           })}
         >
          <Stack.Screen name="Home" component={HomeScreen} />
-         <Stack.Screen name="Sparkles" component={SparklesTabs} />
+         <Stack.Screen name="Sparkles" component={SparklesScreen} />
+         <Stack.Screen name="Books" component={BooksScreen} />
+         <Stack.Screen name="Settings" component={SettingsScreen} />
          <Stack.Screen name="Level1" component={Level1Screen} />
        </Stack.Navigator> 
      </NavigationContainer>

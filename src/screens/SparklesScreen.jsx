@@ -55,6 +55,7 @@ function SparklesScreen({ navigation }) {
       <ImageBackground  source={require('../assets/images/background.jpg')} style={[styles.container]}>
           <PlanetList navigation={navigation}></PlanetList>
       </ImageBackground>
+      <Tabs></Tabs>
       {/* <Button
         title="Go to Level1"
         onPress={() => navigation.navigate('Level1')}

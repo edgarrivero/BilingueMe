@@ -21,16 +21,17 @@
                 style={styles.tabs2}
                 intensity={10}
               >
-                <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+                <TouchableOpacity onPress={() => navigation.navigate('Sparkles')} style={styles.label} >
                   <Image source={require('../assets/icons/home-solid.png')} style={styles.image} />
+                  <Text>Inicio</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+                <TouchableOpacity onPress={() => navigation.navigate('Books')}>
                   <Image source={require('../assets/icons/sparkles-line.png')} style={styles.image} />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+                <TouchableOpacity onPress={() => navigation.navigate('Settings')}>
                   <Image source={require('../assets/icons/books-line.png')} style={styles.image} />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+                <TouchableOpacity onPress={() => navigation.navigate('Settings')}>
                   <Image source={require('../assets/icons/setting-line.png')} style={styles.image} />
                 </TouchableOpacity>
               </View>
@@ -44,11 +45,15 @@
      left: 30
      // Otros estilos para el elemento en la parte inferior
    },
+   label:{
+    alignItems: 'center',
+    
+   },
    tabs: {
-     width: Dimensions.get('window').width - 60,
-     height: 80,
-     backgroundColor: 'rgba(255, 255, 255, 0.2)',
-     borderRadius: 35,
+    width: Dimensions.get('window').width - 60,
+    height: 80,
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    borderRadius: 35,
    },
    tabs2: {
      alignContent: '',
@@ -59,7 +64,8 @@
      borderRadius: 30,
      margin: 5, 
      flexDirection: 'row',
-     overflow: 'hidden'
+     overflow: 'hidden',
+     backgroundColor: 'rgba(255, 255, 255, 0.2)',
    },
    image: {
      width: 40,
