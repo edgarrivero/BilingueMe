@@ -70,6 +70,11 @@ function SparklesTabs() {
             left: 16,
             borderRadius: 25,
             backgroundColor: 'rgba(255, 255, 255, 0.5)',
+            
+        },
+        tabBarLabelStyle: {
+          color: 'white',
+          paddingBottom: 5
         },
       })}
     >
