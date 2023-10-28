@@ -35,7 +35,7 @@ import SettingsScreen from './SettingsScreen';
  import settingsLineIcon from '../assets/icons/setting-line.png';
  import LottieView from 'lottie-react-native';
 
-
+ import { Canvas, Line, vec } from "@shopify/react-native-skia";
 
 const Tab = createBottomTabNavigator();
 
@@ -43,13 +43,22 @@ function SparklesScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <View style={styles.container}>
+      <Canvas style={styles.canvas}>
+          <Line
+              p1={vec(1, 10)}
+              p2={vec(200, 200)}
+              color="lightblue"
+              style="stroke"
+              strokeWidth={4}
+          />
+      </Canvas>
       <ImageBackground  source={require('../assets/images/background.jpg')} style={[styles.container]}>
           <PlanetList navigation={navigation}></PlanetList>
       </ImageBackground>
-      <Button
+      {/* <Button
         title="Go to Level1"
         onPress={() => navigation.navigate('Level1')}
-      />
+      /> */}
       </View>
     </View>
     
@@ -106,7 +115,16 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
 
   },
-  icon: { width: 30, height: 30 }
+  icon: { width: 30, height: 30 },
+  canvas: {
+    position: 'absolute',
+    top: 150,
+    left: -50,
+    zIndex: 100,
+    maxWidth: 350,
+    resizeMode: 'contain', // Esto asegura que la imagen se ajuste sin recortar
+    marginBottom: 200
+  }
 });
 
 export default SparklesScreen;

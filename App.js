@@ -146,11 +146,15 @@ function SparklesTabs() {
      <NavigationContainer>
        <Stack.Navigator 
           initialRouteName="Home"
+          screenOptions={({ route }) => ({
+            headerShown: false,
+            
+          })}
         >
          <Stack.Screen name="Home" component={HomeScreen} />
          <Stack.Screen name="Sparkles" component={SparklesTabs} />
          <Stack.Screen name="Level1" component={Level1Screen} />
-       </Stack.Navigator>
+       </Stack.Navigator> 
      </NavigationContainer>
 
       //  <NavigationContainer>

@@ -17,8 +17,9 @@ import Animated, {
 
 import Svg, { Path } from 'react-native-svg';
 import { SettingsSvg, Shape1Svg } from '../assets/data/svgs';
+import { Canvas, Line, vec } from "@shopify/react-native-skia";
 
-function level1Screen() {
+function Level1Screen() {
   return (
     <View style={{ flex: 1 }}>
         <ImageBackground  source={require('../assets/images/fondo-questions.jpg')} style={[styles.container]}>
@@ -28,8 +29,7 @@ function level1Screen() {
             <Text style={styles.subTitle}>What's your favorite movie or book?</Text>
             <View style={styles.question}>
                 <Text style={styles.title}>Level1</Text>
-                <SettingsSvg />
-                <Shape1Svg />
+                
                 <Animated.Image source={require('../assets/svgs/sparkles.svg')} style={{width: 100,height:100}} />
             </View>
         </ImageBackground>
@@ -95,4 +95,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default level1Screen;
+export default Level1Screen;

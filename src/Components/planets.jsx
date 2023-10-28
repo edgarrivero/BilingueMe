@@ -13,16 +13,18 @@ const PlanetList = ({ navigation }) => {
       data={planetas}
       style={styles.container}
       renderItem={({ item: planeta }) => (
-        <TouchableOpacity onPress={() => navigation.navigate(planeta.navigateTo)}>
+        
           <View style={[styles.planetaContainer, { alignItems: planeta.alignItems, justifyContent: planeta.justifyContent, height: planeta.height }]}>
-            <Image
-              source={{ uri: planeta.imagen }}
-              style={[styles.planetaImagen, { width: planeta.with }]}
-              accessibilityLabel={planeta.nombre}
-            />
+            <TouchableOpacity onPress={() => navigation.navigate(planeta.navigateTo)}>
+              <Image
+                source={{ uri: planeta.imagen }}
+                style={[styles.planetaImagen, { width: planeta.with }]}
+                accessibilityLabel={planeta.nombre}
+              />
+            </TouchableOpacity>
             <Text style={styles.text}>{planeta.nombre}</Text>
           </View>      
-        </TouchableOpacity>
+        
         
       )}
       keyExtractor={(item, index) => index.toString()}
