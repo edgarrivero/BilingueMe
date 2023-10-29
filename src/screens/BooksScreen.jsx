@@ -16,13 +16,15 @@ import Animated, {
 } from 'react-native-reanimated';
 
 import PlanetList from '../Components/planets';
+import Tabs from '../Components/tabs';
 
 function BooksScreen() {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <View style={styles.container}>
       <ImageBackground  source={require('../assets/images/background.jpg')} style={[styles.container]}>
-          <Text>BooksScreen</Text>
+          <Text style={{ paddingTop: 300, color: 'white' }}>BooksScreen</Text>
+          <Tabs></Tabs>
       </ImageBackground>
       </View>
     </View>

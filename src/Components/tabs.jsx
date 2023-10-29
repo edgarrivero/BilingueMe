@@ -1,16 +1,29 @@
  import React from 'react';
  import { View, StyleSheet, Text,Dimensions,Image, TouchableOpacity  } from 'react-native';
- import { useNavigation } from '@react-navigation/native';
+ import { useNavigation, useRoute } from '@react-navigation/native';
  import { SettingsSvg } from '../assets/data/svgs';
  import { BlurView } from 'expo-blur';
 
+
+ const TabItem = ({ screenName, iconActive, iconInactive, label, onPress, isActive }) => (
+  <TouchableOpacity
+    style={[styles.label, isActive && styles.activeTab]}
+    onPress={() => onPress(screenName)}
+  >
+    <Image source={isActive ? iconActive : iconInactive} style={styles.image} />
+    <Text style={[styles.btnlabel, isActive && styles.activeTabText]}>{label}</Text>
+  </TouchableOpacity>
+);
+
  const Tabs = () => {
-     const windowHeight = Dimensions.get('window').height;
+   const windowHeight = Dimensions.get('window').height;
    const bottomViewHeight = 50; 
    const navigation = useNavigation();
-   // Función para navegar a la pantalla correspondiente al tocar una imagen
+   const route = useRoute();
+
    const handleImagePress = (screenName) => {
      navigation.navigate(screenName);
+
    };
 
    return (
@@ -21,19 +34,47 @@
                 style={styles.tabs2}
                 intensity={10}
               >
-                <TouchableOpacity onPress={() => navigation.navigate('Sparkles')} style={styles.label} >
+                <TabItem
+                  screenName="Sparkles"
+                  iconActive={require('../assets/icons/home-solid.png')}
+                  iconInactive={require('../assets/icons/home-line.png')}
+                  label="Sparkles"
+                  onPress={handleImagePress}
+                  isActive={route.name === 'Sparkles'}
+                />
+                <TabItem
+                  screenName="Books"
+                  iconActive={require('../assets/icons/books-solid.png')}
+                  iconInactive={require('../assets/icons/books-line.png')}
+                  label="Books"
+                  onPress={handleImagePress}
+                  isActive={route.name === 'Books'}
+                />
+                <TabItem
+                  screenName="Settings"
+                  iconActive={require('../assets/icons/setting-solid.png')}
+                  iconInactive={require('../assets/icons/setting-line.png')}
+                  label="Settings"
+                  onPress={handleImagePress}
+                  isActive={route.name === 'Settings'}
+                />
+
+                {/* <TouchableOpacity onPress={() => handleImagePress('Sparkles')} style={styles.label} >
                   <Image source={require('../assets/icons/home-solid.png')} style={styles.image} />
-                  <Text>Inicio</Text>
+                  <Text style={styles.btnlabel}>Home</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('Books')}>
+                <TouchableOpacity onPress={() => handleImagePress('Books')} style={styles.label} >
                   <Image source={require('../assets/icons/sparkles-line.png')} style={styles.image} />
+                  <Text style={styles.btnlabel}>Particles</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('Settings')}>
+                <TouchableOpacity onPress={() => handleImagePress('Settings')} style={styles.label} >
                   <Image source={require('../assets/icons/books-line.png')} style={styles.image} />
+                  <Text style={styles.btnlabel}>Books</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('Settings')}>
+                <TouchableOpacity onPress={() => handleImagePress('Settings')} style={styles.label} >
                   <Image source={require('../assets/icons/setting-line.png')} style={styles.image} />
-                </TouchableOpacity>
+                  <Text style={styles.btnlabel}>Settings</Text>
+                </TouchableOpacity> */}
               </View>
          </View>
        </View>
@@ -47,7 +88,7 @@
    },
    label:{
     alignItems: 'center',
-    
+    alignSelf: 'center'
    },
    tabs: {
     width: Dimensions.get('window').width - 60,
@@ -72,10 +113,14 @@
      height: 40,
      justifyContent: 'center',
      alignItems: 'center',
-     margin: 15, // Añade un margen para separar los elementos
+     marginHorizontal: 17
    },
    vector: {
     width: '40'
+   },
+   btnlabel: {
+    color: 'white',
+    fontSize: 12
    }
  });
  export default Tabs;

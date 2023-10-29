@@ -16,6 +16,7 @@ import Animated, {
 } from 'react-native-reanimated';
 
 import PlanetList from '../Components/planets';
+import Tabs from '../Components/tabs';
 
 function SettingsScreen() {
   return (
@@ -24,7 +25,9 @@ function SettingsScreen() {
       <ImageBackground  source={require('../assets/images/background.jpg')} style={[styles.container]}>
           <Text>Settings</Text>
       </ImageBackground>
+
       </View>
+      <Tabs></Tabs>
     </View>
   );
 }
