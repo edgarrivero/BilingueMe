@@ -1,18 +1,7 @@
-import React from 'react';
-import { View, Text, TouchableOpacity, ImageBackground, Image, StyleSheet } from 'react-native';
+import React, { useState }  from 'react';
+import { View, Text, TouchableOpacity, ImageBackground, Image, StyleSheet, Dimensions } from 'react-native';
 import Animated, {
-  useSharedValue,
-  useAnimatedStyle,
-  withRepeat,
-  FadeIn,
-  FadeInDown,
-  FadeOutDown,
-  FadeOut,
   BounceIn,
-  BounceOut,
-  Easing,
-  withTiming,
-  withSequence,
 } from 'react-native-reanimated';
 
 import Svg, { Path } from 'react-native-svg';
@@ -20,17 +9,34 @@ import { BackSvg } from '../assets/data/svgs';
 import { Canvas, Line, vec } from "@shopify/react-native-skia";
 
 function Level1Screen({navigation}) {
+
+    const [leftPosition, setLeftPosition] = useState(0);
+
+    const moveLeft = () => {
+        setLeftPosition(leftPosition + 10); // Cambia la posición hacia la izquierda
+    };
+
   return (
     <View style={{ flex: 1 }}>
         <ImageBackground  source={require('../assets/images/fondo-questions.jpg')} style={[styles.container]}>
             <View style={styles.header}>
-                <View style={styles.btnBack}>
-                    <TouchableOpacity onPress={() => navigation.navigate('Sparkles')}  style={styles.back} >
-                        <BackSvg  style={styles.backSvg} />
-                    </TouchableOpacity>
+            
+                <View style={styles.sectionBack} >
+                    <View style={styles.btnBack}>
+                        <TouchableOpacity onPress={() => navigation.navigate('Sparkles')}  style={styles.back} >
+                            <BackSvg  style={styles.backSvg} />
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.sectionCohete}>
+                        <View style={{ paddingTop: 11 }}>
+                        <Image source={require('../assets/images/lineProgress.png')} style={[styles.lineProgress]} />            
+                        </View>
+                        
+                        <Animated.Image entering={BounceIn.duration(1000)} source={require('../assets/images/cohete.png')} style={[styles.cohete, { left: leftPosition }]} />
+                    </View>
                 </View>
                 
-                <Text style={styles.title}>Completa el espacio en blanco</Text>
+                <Text style={styles.title}>Completa el espacio en blanco y si es mas largo el texto que pasa</Text>
                 <View>
                     <View  style={styles.headerQuestion}>
                         <Animated.Image entering={BounceIn.duration(1000)} source={require('../assets/images/level1-astronaut.png')} style={[styles.astronaut]} />
@@ -38,7 +44,10 @@ function Level1Screen({navigation}) {
                     </View>
                     <Animated.Image entering={BounceIn.duration(1000)} source={require('../assets/images/soil.png')} style={[styles.soil]} />
                     <View style={styles.question}>
-                        <Text>edgar</Text>
+                        <Text style={{ marginTop: 50 }}>edgar y aqui que fue</Text>
+                        <TouchableOpacity onPress={moveLeft} style={styles.button}>
+                            <Text style={styles.buttonText}>Comprobar</Text>
+                        </TouchableOpacity>
                     </View>
                 </View>
             </View>
@@ -52,6 +61,27 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'flex-start',
         width: '100%',
+    },
+    sectionBack: {
+        flexDirection: 'row'
+    },
+    sectionCohete: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        position: 'relative'
+    },
+    cohete: {
+        position: 'absolute',
+        top: 0,
+        left: -10,
+        width: 50,
+        height: 50,
+        resizeMode: 'contain',
+        zIndex: 10
+    },
+    lineProgress: {
+        width: Dimensions.get('window').width - 120,
+        resizeMode: 'contain',
     },
     questionSection:{
         flexDirection: 'row',
@@ -102,8 +132,8 @@ const styles = StyleSheet.create({
     },
     question: {
         backgroundColor: '#754c29',
-        width: '100%',
-        height: '100%',
+        height: Dimensions.get('window').height - 330,
+        position: 'relative'
     },
     astronaut: {
         width: 90,
@@ -111,6 +141,26 @@ const styles = StyleSheet.create({
         marginTop: 40,
         resizeMode: 'contain',
         zIndex: 2
+    },
+    button: {
+        position: 'absolute',
+        bottom: 5,
+        width: Dimensions.get('window').width - 80,
+        backgroundColor: '#fbae17',
+        paddingVertical: 10,
+        paddingHorizontal: 10,
+        borderRadius: 50,
+        marginVertical: 30,
+        shadowOpacity: 0.5,
+        shadowRadius: 10,
+        elevation: 5,
+        marginHorizontal: 40,
+        alignItems: 'center'
+    },
+    buttonText: {
+        color: 'white',
+        fontSize: 32,
+        fontWeight: 'bold',
     },
 });
 
